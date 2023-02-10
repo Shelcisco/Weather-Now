@@ -6,21 +6,24 @@
 }
 
 .body{
-    min-height: 100vh;
+  background-color: azure;
     display: flex;
     justify-content: space-around;
 
 }
 
 
-.buttons{
-    justify-content: space-between; 
-    align-items: left;
+.container{
+    justify-content: center;
+    text-align: center
+    
+    
 }
 
-.container{
-    align-items: right;
-    justify-content: right;
+.forecastcard{
+
+    justify-content: center;
+    text-align: center
 }
 
 .header{
@@ -34,6 +37,3 @@ h1{
     text-shadow: 2px;
 }
 
-.DenBtn{
-  background-color: aqua;
-}

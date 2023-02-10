@@ -14,48 +14,43 @@
 </div>
 
 <body>
-    <!-- <form onsearch ="myfunc(event)"> -->
-        <label for="City">Search for a City:</label>
-        <!-- <input type="text" id="City" name="City"> -->
-        <input type="text" id="City" required />
-    <div class="Buttons">
-            <div>
-                <button class="Search">Search</button>
-            </div>
-            <button class="AtlantaBtn">Atlanta</button>
-            <div>
-                <button class="DenBtn">Denver</button>
-            </div>
-            <div>
-                <button class="SetBtn">Seattle</button>
-            </div>
-            <div>
-                <button class="SanBtn">San Francisco</button>
-            </div>
-            <div>
-                <button class="OrlBtn">Orlando</button>
-            </div>
-            <div>
-                <button class="NyBtn">New York</button>
-            </div>
-            <div></div>
-            <button class="ChicBtn">Chicago</button>
-        </div>
-        <div>
-            <button class="AusBtn">Austin</button>
-        </div>
+    
+        <label for="searchCity">Search for a City:</label>
+      <div class="1container">
+        <input type="text" id="city"/>
+        <button onclick="Search();">Search</button> 
     </div>
+        <h2></h2>
+   
 
     <div class="container">
-    <h3>Place Holder</h3>
-        <h2>5 Day Forecast:</h2>
-    </div>
+    <h3>Daily Forecast</h3>
+</div>
+<div class="forecastcard">
+        <h4>5 Day Forecast:</h4>
+</div>
+    
 
-    <!-- <input type="submit" value="submit" />
-    </form> -->
+<script>
+    function save(){
+        var new_data = document.getElementById('city').value;
 
-<!-- <script type="text/javascript"> function myfunc(event) { event.preventdefault();}
-</script> -->
+        // if there is nothing saved at the start save empty array
+      if(localStorage.getItem('city') ==null) {
+        localStorage.setItem('city', '[]')
+      } 
+
+      //Combine Data
+
+      var old_data = JSON.parse(localStorage.getItem('city'));
+      old_data.push(new_data);
+
+      //save the old and new to local storage
+
+      localStorage.setItem('city', JSON.stringify (old_data));
+    }
+
+</script>
 
     <script src="./assets/script.js"></script>
 </body>
