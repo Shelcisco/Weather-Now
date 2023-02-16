@@ -16,41 +16,30 @@
 <body>
     
         <label for="searchCity">Search for a City:</label>
-      <div class="1container">
-        <input type="text" id="city"/>
-        <button onclick="Search();">Search</button> 
-    </div>
-        <h2></h2>
-   
-
-    <div class="container">
-    <h3>Daily Forecast</h3>
-</div>
-<div class="forecastcard">
-        <h4>5 Day Forecast:</h4>
-</div>
-    
-
-<script>
-    function save(){
-        var new_data = document.getElementById('city').value;
-
-        // if there is nothing saved at the start save empty array
-      if(localStorage.getItem('city') ==null) {
-        localStorage.setItem('city', '[]')
-      } 
-
-      //Combine Data
-
-      var old_data = JSON.parse(localStorage.getItem('city'));
-      old_data.push(new_data);
-
-      //save the old and new to local storage
-
-      localStorage.setItem('city', JSON.stringify (old_data));
-    }
-
-</script>
+        <div class="control" id="search-input">
+            <input
+              class="input"
+              type="text"
+              id="location-search"
+              placeholder="Enter Location"
+            />
+            <input
+              class="input"
+              type="text"
+              id="datepicker"
+              autocomplete="off"
+              placeholder="Enter Date"
+            />
+            <button class="button is-fullwidth" id="search-button">
+              Search
+            </button>
+           
+          </div>
+          <div class="recent-search" id="recent-searches">
+            <p> Recent Searches</p>
+            <h4></h4>
+            <h4></h4>
+            <h4></h4>
 
     <script src="./assets/script.js"></script>
 </body>
