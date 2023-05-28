@@ -37,3 +37,8 @@ h1{
     text-shadow: 2px;
 }
 
+.recent-searches{
+    display: flex;
+    flex-direction: column;
+}
+
