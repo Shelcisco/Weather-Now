@@ -94,7 +94,7 @@ var locationA=  JSON.parse(localStorage.getItem("locations")) || [];
   
 // }
 
-// const recentsearches = document.querySelector(".recent-searches")
+const recentsearches = document.querySelector(".recent-searches")
 submitBtn.addEventListener("click", display);
 
 // h4 = document.querySelector("h4");
@@ -107,8 +107,8 @@ localStorage.setItem('locations', JSON.stringify(locationA))
 const newh4= document.createElement("button")
 newh4.innerHTML = localStorage.getItem ("locations")
 newh4.innerHTML = cityInput.value
-newh4.addEventListener("click", () => {
-  getApi(cityInput.value);
+newh4.addEventListener("click", (e) => {
+  getApi(e.target.textContent);
 });
 recentsearches.append(newh4)
    }
