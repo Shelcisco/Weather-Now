@@ -15,72 +15,59 @@
 </div>
 
 <body>
-    
-        <label for="searchCity">Search for a City:</label>
-        <div class="control" id="search-input">
-            <input
-              class="input"
-              type="text"
-              id="location-search"
-              placeholder="Enter Location"
-            />
-            <!-- <input
-              class="input"
-              type="text"
-              id="datepicker"
-              autocomplete="off"
-              placeholder="Enter Date"
-            /> -->
-            <button class="button is-fullwidth" id="search-button">
-              Search
-            </button>
-           
-          </div>
-          <div class="recent-searches" id="recent-searches">
-            <p> Recent Searches</p>
-            <h4></h4>
-            <h5></h5>
+    <!-- Search Bar -->
+    <label for="searchCity">Search for a City:</label>
+    <div class="control" id="search-input">
+        <input class="input" type="text" id="location-search" placeholder="Enter Location" />
+        <!-- Submit button for search bar -->
+        <button class="button is-fullwidth" id="search-button">
+            Search
+        </button>
+
+    </div>
+    <!-- Display recent searches -->
+    <div class="recent-searches" id="recent-searches">
+        <p> Recent Searches</p>
+    </div>
+    <!-- Displays Current day forecast -->
+    <div id="weather-content" class="col-12 col-md-10">
+        <div class="row">
+            <div class="col-12">
+                <div class="city-info border my-3 px-3 py-3">
+                    <h2 id="current-city">City</h2>
+                    <p class="mb-0">Temperature: <span id="temp"></span></p>
+                    <p class="mb-0">Wind Speed: <span id="wind"></span></p>
+                    <p class="mb-0">Humidity: <span id="humidity"></span></p>
+                </div>
             </div>
+        </div>
 
-            <div id="weather-content" class="col-12 col-md-10">
-              <div class="row">
-                  <div class="col-12">
-                      <div class="city-info border my-3 px-3 py-3">
-                          <h2 id="current-city">City</h2>
-                          <p class="mb-0">Temperature: <span id="temp"></span></p>
-                          <p class="mb-0">Wind Speed: <span id="wind"></span></p>
-                          <p class="mb-0">Humidity: <span id="humidity"></span></p>
-                      </div>
-                  </div>
-              </div>
-  
-              <div class="row">
-                  <div class="col-12">
-                      <h3>5-Day Forecast:</h3>
-                  </div>
-              </div>
-  
-              <!-- Displays 5-day forecast -->
-              <div id="weather-forecast" class="row">g
-                  <div class="col-2">
-                      <div class="card">
-                          <div class="card-body">
-                              <p class="card-text mb-0">Temp: </p>
-                              <p class="cart-text mb-0">Wind: </p>
-                              <p class="card-text mb-0">Humidity: </p>
-                          </div> 
-                          </div>
-                        </div>
+        <div class="row">
+            <div class="col-12">
+                <h3>5-Day Forecast:</h3>
+            </div>
+        </div>
+
+        <!-- Displays 5-day forecast -->
+        <div id="weather-forecast" class="row">g
+            <div class="col-2">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-text mb-0">Temp: </p>
+                        <p class="cart-text mb-0">Wind: </p>
+                        <p class="card-text mb-0">Humidity: </p>
                     </div>
-               
+                </div>
+            </div>
+        </div>
 
 
-            
-                          <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-                          <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-                              integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" 
-                              crossorigin="anonymous"></script>
-    <script src="./Assets/JS/script.js"></script>
+
+
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+            integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
+        <script src="./Assets/JS/script.js"></script>
 </body>
 
 </html>

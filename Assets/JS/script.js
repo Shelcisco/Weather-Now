@@ -2,22 +2,16 @@ var APIkey = 'a21690291032747ea02cca028da03d72';
 var cityInput = document.getElementById('location-search');
 var submitBtn = document.querySelector('#search-button');
 var SearchedCities = [];
-// var previousCityEl = document.getElementById('history');
 var weatherEl = document.querySelector('.city-info');
 var fivedayEl = document.querySelector('#weather-forecast');
 var clearSearch =  document.getElementById('clearBtn')
 
 
+//CALL API TO GET WEATHER DATA
 
-// var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + "&appid=" + APIKey;
-// var WeatherApiUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + inputValue.value + APIkey;
-
+ //Get current day forecast data
 function getApi(city) {
-  // fetch request gets a list of all the repos for the node.js organization
- 
-  
-    // var city = cityInput.value;
-    // console.log(cityInput)
+
     var currentDay = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=imperial&appid=' + APIkey;
     fetch(currentDay)
       .then(function (response) {
@@ -27,13 +21,11 @@ function getApi(city) {
         }
       })
 
-
+//Get 5 day Forecast data
       .then(function (data) {
        
         var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + APIkey;
-        // displayResults(data);
         fiveDayForecast(data);
-        // displayCities();
         fetch(queryURL)
       .then(function (response) {
         if (response.ok) {
@@ -54,8 +46,8 @@ submitBtn.addEventListener("click", (event)=>{
   getApi(cityInput.value);
 })
 
+//display current day forecast info
 function displayResults (currentDay){
-  // var currentDay = data.list[i];
   var icon = ("Assets/images/"+currentDay.weather[0].icon+".png");
   var cardHtml = `<h2 id="current-city">${currentDay.name}</h2>
   <img src="${icon}" alt="Weather on this day"></img>
@@ -65,6 +57,7 @@ function displayResults (currentDay){
   weatherEl.innerHTML=(cardHtml)
 }
 
+//Display five day forecast info
 function  fiveDayForecast(data){
   var cardHtml = "";
   for (var i = 0; i < data.list.length; i += 8) {
@@ -78,7 +71,7 @@ function  fiveDayForecast(data){
     <p class="card-text mb-0">Humidity:${currentDay.main.humidity}  </p>
 </div> </div></div>`
     
-   // console.log(day.add(((i+1)/8),'day').format("DD MMM YYYY")+);
+  
 } 
 fivedayEl.innerHTML=(cardHtml)
 }
@@ -86,20 +79,16 @@ fivedayEl.innerHTML=(cardHtml)
 //Saving Location to local Storage
 //HELP FINISH
 
+// RECENT SEARCHES
 
+//Parse Data to show single search
 var locationA=  JSON.parse(localStorage.getItem("locations")) || [];
-
-// for (let i = 0; i < array.length; i++) {
   
-  
-// }
-
+//Event Listener 
 const recentsearches = document.querySelector(".recent-searches")
 submitBtn.addEventListener("click", display);
 
-// h4 = document.querySelector("h4");
-
-
+//Function to display recent search buttons + to make them functional (searching for city name listed on button)
 
 function display(){
 locationA.push(cityInput.value)    
@@ -116,21 +105,3 @@ recentsearches.append(newh4)
 
 
 
-
-
-//Saving Dates to local storage 
-  
-// const Day= [];
-// const input2= document.querySelector("#datepicker");
-// const srchBttn2 = document.querySelector("#search-button");
-
-// //  h5 = document.querySelector("h5");
-// srchBttn2.addEventListener("click", Days);
-
-// function Days(){
-//   Day.push(input2.value)    
-//   localStorage.setItem('Date', Day)
-//   const newh5= document.createElement("h5")
-//   newh5.innerHTML = input2.value
-//   recentsearches.append(newh5)
-//   }

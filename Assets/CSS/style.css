@@ -40,5 +40,8 @@ h1{
 .recent-searches{
     display: flex;
     flex-direction: column;
+    
 }
+
+
 
